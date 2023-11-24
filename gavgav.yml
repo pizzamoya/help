@@ -1,0 +1,20 @@
+---
+- hosts: "all"
+  become: true
+  tasks:
+  - name: "help"
+    ansible.builtin.apt:
+      name: "nginx"
+      state: "latest"
+      update_cache: true
+  - name: "aar"
+    ansible.builtin.file:
+      path: "/var/www/html"
+      state: "absent"
+  - name: "123"
+    ansible.builtin.copy:
+      scr: "files/html"
+      dest: "/ver/www"
+      owner: "vagrant"
+      group: "vagrant"
+      mode: "0644"
